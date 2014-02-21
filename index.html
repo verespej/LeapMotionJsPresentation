@@ -46,10 +46,12 @@
 				</section>
 
 				<section>
-					<h2>What is Leap Motion?<h2>
-					<p>
-						[TODO]
-					</p>
+					<h2>What is Leap Motion?</h2>
+					<ul>
+						<li>Motion-sensing hardware device</li>
+						<li>SDKs</li>
+						<li>App store</li>
+					</ul>
 
 					<aside class="notes">
 						[Speaker notes]
@@ -59,55 +61,143 @@
 				<section>
 					<section>
 						<h2>How does it work?</h2>
-						<p>[TODO]</p>
 					</section>
 					<section>
-						<h2>Explanation</h2>
-						<p>[TODO]</p>
+						<h2>Hardware</h2>
+						<ul>
+							<li>IR camera and LEDs</li>
+							<li>High-res, close-range</li>
+							<li>USB</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Software</h2>
+						<ul>
+							<li>Daemon/Service</li>
+							<li>Websocket server</li>
+							<li>SDK</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Ecosystem</h2>
+						<ul>
+							<li>Developer program and community</li>
+							<li>App store</li>
+						</ul>
 					</section>
 				</section>
 
 				<section>
-					<h2>What can we do with it?</h2>
-					<p>[TODO]</p>
+					<section>
+						<h2>How do we use it?</h2>
+					</section>
+					<section>
+						<h2>Let's install our devices</h2>
+						<ul>
+							<li><a href='https://www.leapmotion.com/setup'>https://www.leapmotion.com/setup</a></li>
+							<li>(recommended) <a href='https://developer.leapmotion.com/'>https://developer.leapmotion.com/</a></li>
+							<li>If you already have it installed, try some of the apps</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Config</h2>
+						<ul>
+							<li>Open the Leap Motion control panel</li>
+							<li>Make sure "Allow Web Apps" is enabled</li>
+							<li>Must not have firewall blocking TCP over 127.0.0.1:6437, 6438, and 6439</li>
+						</ul>
+					</section>
+					<section>
+						<h2>What it does</h2>
+						<ul>
+							<li>Views an "inverted pyramid" above the device</li>
+							<li>Identifies hands, fingers, and pointing tools</li>
+							<li>Reports location, motion, and gestures</li>
+						</ul>
+						<img src='images/view_range.png' />
+					</section>
+					<section>
+						<h2>Additional details</h2>
+						<ul>
+							<li>Orientation is a right-handed Cartesian coordinate system</li>
+							<li>Units are millimeters, mm/s, and radians</li>
+						</ul>
+						<img src='images/coordinate_orientation.png' />
+					</section>
+					<section>
+						<h2>Data reporting</h2>
+						<ul>
+							<li>Clients receive data at intervals</li>
+							<li>Data is contained in a "frame"</li>
+							<li>A frame contains info about detected objects</li>
+							<li>Object info contains measurements</li>
+						</ul>
+					</section>
 				</section>
 
 				<section>
 					<section>
-						<h2>A Very Basic Example</h2>
-						<p>[TODO]</p>
-						<pre><code data-trim contenteditable>
+						<h2>Let's start using it!</h2>
+						<!-- <pre><code data-trim contenteditable>
 function doSomething(x) {
 	return 'did it';
 }
-						</code></pre>
+						</code></pre> -->
 					</section>
 					<section>
+						<h2>JS Client</h2>
+						<ul>
+							<li>Source: <a href='https://github.com/leapmotion/leapjs'>https://github.com/leapmotion/leapjs</a></li>
+							<li>Hosted: http://js.leapmotion.com/0.4.0/leap.js</li>
+						</ul>
+						<!--
 						<ol>
 							<li class="fragment"><code>any type</code></li>
 							<li class="fragment"><em>of view</em></li>
 							<li class="fragment"><strong>fragments</strong></li>
 						</ol>
+						-->
+					</section>
+					<section>
+						<h2>Samples</h2>
+						<p>
+							For today, we'll start with some simple, prebaked samples.<br />
+							See <a href='https://github.com/hverespej/LeapMotionSamples'>https://github.com/hverespej/LeapMotionSamples</a>.
+						</p>
 					</section>
 				</section>
 
 				<section>
-					<h2>A More Interesting Example</h2>
-					<p>[TODO]</p>
-						<pre><code data-trim contenteditable>
-function doSomething(x) {
-	return 'did it';
-}
-						</code></pre>
+					<h2>Sample 1: Simple hand tracking</h2>
+					<ul>
+						<li><a href='https://developer.leapmotion.com/documentation/javascript/api/Leap.Frame.html'>https://developer.leapmotion.com/documentation/javascript/api/Leap.Frame.html</a></li>
+						<li><a href='https://developer.leapmotion.com/documentation/javascript/api/Leap.Hand.html'>https://developer.leapmotion.com/documentation/javascript/api/Leap.Hand.html</a></li>
+						<li>Try modifying to track some additional values</li>
 				</section>
-					</p>
+
+				<section>
+					<h2>Sample 2: Hand tracking, gestures, and WebGL</h2>
+					<ul>
+						<li><a href='http://threejs.org/'>http://threejs.org/</a></li>
+						<li><a href='https://developer.leapmotion.com/documentation/javascript/api/Leap.Gesture.html'>https://developer.leapmotion.com/documentation/javascript/api/Leap.Gesture.html</a></li>
+						<li>Try modifying to add an additional behavior</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Open Projects</h2>
+					<ol>
+						<li>Let's brainstorm</li>
+						<li>Find someone to work with</li>
+					</ol>
 				</section>
 
 				<section>
 					<h1>Questions?</h1>
 					<br />
 					<p>Hakon Verespej, Madrona Venture Group</p>
-					<p>hakon@madrona.com | @hverespej</p>
+					<p><a href='mailto:hakon@madrona.com'>hakon@madrona.com</a> | <a href='https://twitter.com/HVerespej'>@hverespej</a></p>
+					<p><a href='http://www.verespej.com'>verespej.com</a></p>
 				</section>
 
 			</div>
